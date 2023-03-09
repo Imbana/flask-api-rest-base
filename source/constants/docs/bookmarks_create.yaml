@@ -1,0 +1,33 @@
+GET stats about bookmarks
+---
+tags:
+  - Bookmarks
+
+parameters:
+  - name: body
+    description: The body para crear una bookmark
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "body"
+        - "url"
+      properties:
+        body:
+          type: "string"
+          example: "Descripcion"
+        url:
+          type: "string"
+          example: http://wwwgoogle.com
+
+
+security:
+  - Bearer: [] 
+
+responses:
+  200:
+    description: Bookmarks create
+
+  401:
+    description: Fails to get items due to authentication error
